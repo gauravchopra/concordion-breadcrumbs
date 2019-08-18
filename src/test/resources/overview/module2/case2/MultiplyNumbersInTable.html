@@ -1,0 +1,44 @@
+<html xmlns:concordion = "http://www.concordion.org/2007/concordion">
+  
+   
+   <body>
+   
+   <h1>Multipication for the given numbers</h1>
+   <p> For the calculator application I want the multipication functionality</p>
+   <div class = "collapsible"> 
+   This is a test for collapasable extension
+    <p>Hello I am doing great</p>
+   </div>   
+   
+  
+   <div class = "example">      
+         <h3>Example</h3>
+        
+        <table>
+        
+        <tr>
+        
+        <th> First Number</th>
+        <th>Second Number</th>
+        <th> Result</th>
+        
+        </tr>
+        
+        <tr concordion:execute="#result = multiply(#firstNum,#secondNum)">
+        <td concordion:set="#firstNum">2</td>
+        <td concordion:set="#secondNum">3</td>
+        <td concordion:assertEquals="#result">6</td>
+        
+        </tr>
+     <tr concordion:execute="#result = multiply(#firstNum,#secondNum)">
+        <td concordion:set="#firstNum">4</td>
+        <td concordion:set="#secondNum">3</td>
+        <td concordion:assertEquals="#result">12</td>
+        </tr>
+        
+        </table>
+       </div>
+
+  
+   </body>
+   </html>

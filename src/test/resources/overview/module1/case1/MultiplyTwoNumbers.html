@@ -1,0 +1,24 @@
+<html xmlns:concordion = "http://www.concordion.org/2007/concordion">
+   
+
+   <body>
+      <h1>Multipication</h1>
+      <p>We are building specifications for our multipication application.</p>
+      <p>Following is the requirement to multiply two numbers:</p>
+      <div concordion:example="Example1">      
+         
+         <p>When <span concordion:set = "#firstNumber">2</span> 
+            is multiplied with <span concordion:set = "#secondNumber">8</span> then
+            "<span concordion:assertEquals = "getResult(#firstNumber,#secondNumber)">16</span>" is returned.</p>
+      </div>
+      
+      
+      <div concordion:example="Example2">      
+         
+         <p>When <span concordion:set = "#firstNumber">2</span> 
+            is multiplied with <span concordion:set = "#secondNumber">9</span> then
+            "<span concordion:assertEquals = "getResult(#firstNumber,#secondNumber)">18</span>" is returned.</p>
+      </div>
+   </body>
+
+</html>

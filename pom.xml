@@ -1,0 +1,133 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.abc</groupId>
+  <artifactId>concordion-example1</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <properties>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <project.build.outputEncoding>UTF-8</project.build.outputEncoding>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <sitePluginVersion>3.0</sitePluginVersion>
+        <concordion.version>2.1.0</concordion.version>
+        <concordion-extensions.version>1.1.0</concordion-extensions.version>
+    </properties>
+  
+  <dependencies>
+  	 <dependency>
+            <groupId>org.concordion</groupId>
+            <artifactId>concordion</artifactId>
+            <version>${concordion.version}</version>
+
+            <exclusions>
+            	<exclusion>
+            		<groupId>xom</groupId>
+            		<artifactId>xom</artifactId>
+            	</exclusion>
+            </exclusions>
+  	 </dependency>
+<dependency>
+    <groupId>xom</groupId>
+    <artifactId>xom</artifactId>
+    <version>1.1</version>
+</dependency>
+       
+        
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            
+            <version>4.12</version>
+        </dependency>
+        <dependency>
+    <groupId>org.concordion</groupId>
+    <artifactId>concordion-run-totals-extension</artifactId>
+    <version>1.1.0</version>
+</dependency>
+           <dependency>
+    <groupId>org.concordion</groupId>
+    <artifactId>concordion-timing-extension</artifactId>
+    <version>1.1.0</version>
+</dependency>
+
+ <dependency>
+    <groupId>com.google.guava</groupId>
+    <artifactId>guava</artifactId>
+    <version>17.0</version>
+</dependency>
+
+ <dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-api</artifactId>
+    <version>1.7.7</version>
+</dependency>
+<dependency>
+    <groupId>org.concordion</groupId>
+    <artifactId>concordion-parallel-run-extension</artifactId>
+    <version>1.1.0</version>
+</dependency>
+
+<dependency>
+    <groupId>org.concordion</groupId>
+    <artifactId>concordion-logging-tooltip-extension</artifactId>
+    <version>1.1.2</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.concordion/concordion-collapse-output-extension -->
+<dependency>
+    <groupId>org.concordion</groupId>
+    <artifactId>concordion-collapse-output-extension</artifactId>
+    <version>1.0.0</version>
+</dependency>
+
+<dependency>
+    <groupId>org.concordion</groupId>
+    <artifactId>concordion-input-style-extension</artifactId>
+    <version>0.1</version>
+</dependency>
+
+
+
+
+
+
+        
+    
+  </dependencies>
+
+<build>
+  
+  <plugins>
+ <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-site-plugin</artifactId>
+            <version>3.0</version>
+            <configuration>
+            <reportPlugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-project-info-reports-plugin</artifactId>
+                    <version>2.2</version>
+                    <configuration>
+                        <dependencyDetailsEnabled>false</dependencyDetailsEnabled>
+                        <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+                    </configuration>
+                </plugin>
+                
+            </reportPlugins>
+            </configuration>
+        </plugin>
+        <plugin>
+      <artifactId>maven-surefire-plugin</artifactId>
+      <version>2.19.1</version>
+      <configuration>
+        <systemPropertyVariables>
+          <concordion.output.dir>target/concordion</concordion.output.dir>
+        </systemPropertyVariables>
+      </configuration>
+    </plugin>
+    
+
+    </plugins>
+    </build>
+</project>
